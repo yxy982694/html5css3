@@ -14,16 +14,217 @@
 		body{
 			height:3000px;
 		}
+		/* input,datalist,option{
+			width:200px;
+		}
+		.container{
+			width: 200px;
+			height:200px;
+			border: 1px solid red;
+			margin: 30px;
+			position:relative;
+		}
+		span{
+			height: 50px;
+			border: 1px solid green;
+			position:absolute;
+		}
+		table{
+			width: 300px;
+			border: 1px solid red;
+			border-radius:5px;
+		}
+		td{
+			width: 25%;
+			word-break:break-all;
+		}
+		.div1{
+			width: 500px;
+			display:flex
+		}
+		.div1 p{
+			width: 25%;
+			word-break:break-all;
+			border: 1px solid red;
+			display:flex;
+			align-items: center;
+			justify-content:center;
+		} */
 	</style>
 </head>
 <body>
-	<div class="container">
-		22
-	</div>
+	<!-- <input type="text">
+	<div onclick="clickDiv()">点击</div> -->
+	<!-- <div contentEditable="true">
+		<p>345hide</p>
+		<p>345</p>
+		<p>345</p>
+		<p>345</p>
+	</div> -->
+	<!-- <input type="week" step="3"> -->
+	<!-- <input type="text" list="datal">
+	<datalist id="datal">
+		<option value="11">11</option>
+		<option value="1122">1122</option>
+		<option value="3223">3223</option>
+		<option value="41114">41114</option>
+		<option value="52221115">52221115</option>
+	</datalist> -->
+	<!-- <div class="div1">
+		<p>1ffffffffffffffffff444444444444</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+	</div> -->
+	<!-- <table>
+		<tr>
+			<td>ffffeeeeeeeeeefee</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+	</table> -->
+	<!-- <div class="container">
+		<div class="div1">1111</div>
+		<div>张三张三李四张三李四李四</div>
+		<span class="clickspan">我是span元素</span>
+	</div> -->
+	<!-- <form action="##">
+		<input type="text" name="name1">
+		<input type="text" name="name2">
+		<input type="text" name="name3">
+		<input type="image" src="img/1.png">
+	</form> -->
+	<style>
+		/* input{
+			width: 30px;
+			height: 30px;
+		} */
+		sectionn {
+			display:block;
+			border: 1px solid red;
+		}
+	</style>
+	<!-- <input type="checkbox" indeterminate> -->
+	<!-- <input type="datetime-local">
+	<input type="search">
+	<input type="range">
+	<input type="color">
+	<input type="time" step="60"> -->
+	<!-- <input type="date" min="2019-03-19" max="2019-11-01"> -->
+	<!-- <input type="number" value="30" min="10" max="60" step="5">
+	<div onclick="clickDiv()">点击</div>
+	<div onclick="clickDiv()">点店家击</div> -->
+	<!-- <form action="###">
+		<input type="range" min="0" max="100" step="5" onchange="valueChange()">
+		<output>10</output>
+	</form> -->
+	<!-- <sectionn>张三</sectionn> -->
+	<!-- <form action="###">
+		<input class="inp1" type="text" name="name1" minlength="5" maxlength="8" required="required"><br/>
+		<input class="inp2" type="text" name="name2" required="required"><br/>
+		<input class="inp3" type="text" name="name3"><br/>
+		<input type="submit">
+	</form> -->
+	<!-- <details>
+		<summary>可伸缩</summary>
+		<p>op</p>
+		<p>op</p>
+		<p>op</p>
+		<p>op</p>	
+	</details> -->
+	<!-- <div>
+		<mark>您是好人</mark>
+		<p>op</p>
+		<p>op</p>
+		<p>op</p>
+		<p>op</p>
+	</div> -->
+	<!-- <progress value="10" max="100"></progress>
+	<input type="submit"> -->
+	<!-- <meter value="60" min="0" max="100" low="10" high="80" optimum="60">20%</meter> -->
+	<style>
+		/* .div3{
+			position:relative;
+			z-index: 999;
+		}
+		dialog{
+			width: 80%;
+		} */
+	</style>
+	<!-- <dialog>
+		<p>90</p>
+		<p>90</p>
+		<p>90</p>
+		<p>90</p>
+	</dialog>
+	<div class="div2">打开</div>
+	<div class="div3">关闭</div> -->
+	<a href="json/index.json" download>图片</a>
+	<script src="js/jquery.min.js"></script>
 	<script type="text/javascript">
 		"use strict";
-		
-		
+		// document.querySelector('.div2').onclick = function () {
+		// 	document.querySelector('dialog').show();
+		// 	document.querySelector('dialog').returnValue = '对话框的值';
+		// }
+		// document.querySelector('.div3').onclick = function () {
+		// 	document.querySelector('dialog').close();
+		// 	alert(document.querySelector('dialog').returnValue);
+		// }
+		// document.querySelector('input').onclick = function () {
+		// 	var i = 0;
+		// 	var dingshi = setInterval(function () {
+		// 		if (i == 80) {
+		// 			clearInterval(dingshi);
+		// 		} else {
+		// 			document.querySelector('progress').value = i++;
+		// 		}
+		// 	},1000)
+		// }
+		// document.querySelector('.inp1').onblur = function () {
+			// console.log(this.validity.valid);
+			// console.log(this.validity.valueMissing);
+			// if (!this.validity.valid) {
+			// 	console.log('请填一个且大于5小于8');
+			// 	this.setCustomValidity('你必须填一个东西');
+			// } else {
+			// 	console.log('通过了');
+			// }
+		// }
+		// document.querySelector('.inp2').oninput = function () {
+		// 	if (this.validity.valueMissing) {
+		// 		console.log('请填一个');
+		// 		this.setCustomValidity('你必须填一个东西');
+		// 	} else {
+		// 		console.log('no');
+		// 	}
+		// }
+		// document.querySelector('form').onsumbit = function () {
+		// 	var flag = document.querySelector('.inp1').checkValidity();
+		// 	console.log(flag);
+		// }
+		// document.createElement('sectionn');
+		// console.log(document.querySelector('sectionn'));
+		// function valueChange () {
+		// 	var number = document.querySelector('input').value;
+		// 	document.querySelector('output').value = number;
+		// }
+		// document.querySelector('input').stepUp(5);
+		// document.querySelector('input').stepDown(8);
+		// document.querySelector('input').valueAsDate = new Date();
+		// function clickDiv () {
+			// alert(typeof document.querySelector('input').valueAsNumber) // 是数字 value是string
+			// document.querySelector('input').indeterminate = true;
+		// }
+		// function clickDiv () {
+		// 	alert('l;l');
+		// 	console.log(document.querySelector('input').selectionDirection);
+		// }
+		// var scrollHeight = document.querySelector('.div1');
+		// document.querySelector('span').onclick = function () {
+		// 	console.log(scrollHeight.getBoundingClientRect());
+		// }
 	</script>
 </body>
 </html>
