@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html导入功能</title>
+	<link rel="stylesheet" href="css/sw.css">
+	<script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div class="dd">我是导入文件</div>
+	<script>
+	// document.currentScript.ownerDocument代表导入文档的引用
+	// document代表主文档的引用
+	// 可以在里面操作主文档的任何dom节点
+		let importDoc = document.currentScript.ownerDocument;
+		let styles = importDoc.querySelector('link[rel="stylesheet"]');
+		let scripts = importDoc.querySelector('script[src="js/jquery.min.js"]');
+		document.head.appendChild(styles.cloneNode(true));
+		document.head.appendChild(scripts.cloneNode(true));
+		console.log(document.querySelector('.za').innerHTML);
+	// 导入不会阻塞主页面的解析
+	//document.querySelector('.za').innerHTML执行这句时，会不会在主页面还没
+	// 加载到.za节点的情况  而报错
+	// 会不会，在<script src="js/jquery.min.js"></script>还没解析完成时，
+	// 在主页面的script中，就开始使用$的情况  而报错
+	</script>
+</body>
+</html>

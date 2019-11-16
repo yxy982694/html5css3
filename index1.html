@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" type="image/x-icon" href="img/1.png">
+	<title>jkjk</title>
+</head>
+<body>
+	index1.html
+	<input type="text"><br/>
+	<button>点击发送</button>
+	<div>点击获取</div>
+	<script>
+		var worker = new SharedWorker('js/shareWorker.js');
+		var port = worker.port;
+		port.onmessage = function (event) {
+			alert('index1.html');
+			console.log('index1'+event.data);
+		}
+		
+		document.querySelector('button').onclick = function () {
+			var inpVal = document.querySelector('input').value;
+			port.postMessage(inpVal);
+		}
+		document.querySelector('div').onclick = function () {
+			port.postMessage('get');
+		}
+		// var worker = new Worker('js/worker1.js');
+
+		// worker.onmessage = function (event) {
+		// 	// 处理从后台接受到的数据
+		// 	console.log(event.data);
+		// }
+		// document.querySelector('button').onclick = function () {
+		// 	var inpVal = document.querySelector('input').value;
+		// 	worker.postMessage(inpVal);
+		// }
+		// document.querySelector('div').onclick = function () {
+		// 	worker.postMessage('get');
+		// }
+		var worker = new SharedWorker('js/shareWorker.js');
+		var port = worker.port;
+		port.onmessage = function (event) {
+			alert('index1.html');
+			console.log('index1'+event.data);
+		}
+		
+		document.querySelector('button').onclick = function () {
+			var inpVal = document.querySelector('input').value;
+			port.postMessage(inpVal);
+		}
+		document.querySelector('div').onclick = function () {
+			port.postMessage('get');
+		}
+	</script>
+</body>
+</html>

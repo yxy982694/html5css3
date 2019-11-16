@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>跨域消息传输示例--子页面2</title>
+</head>
+<body>
+	<div>我是子页面2</div>
+	<p></p>
+	<script>
+		window.addEventListener('message',function (e) {
+			document.querySelector('p').innerHTML=e.data;
+			event.ports[0].postMessage('2页面已经接受到1页面的内容了'+e.data);
+		})
+	</script>
+</body>
+</html>

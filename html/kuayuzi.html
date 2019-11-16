@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>跨域消息传输示例--子页面1</title>
+</head>
+<body>
+	<div>我是子页面1</div>
+	<p></p>
+	<script>
+		var mc = new MessageChannel();
+		window.parent.postMessage('我是1页面发过来的内容','http://localhost/index.html',[mc.port2]);
+		mc.port1.addEventListener('message',function (event) {
+			document.querySelector('p').innerHTML = event.data;
+		})
+		mc.port1.start();
+	</script>
+</body>
+</html>

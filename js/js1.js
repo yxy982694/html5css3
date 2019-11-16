@@ -1,5 +1,6 @@
-function fn () {
-	var ss1 = document.getElementById('aa');
-	console.log('ss1');
-	console.log(ss1);
+let ss = '陆凌牛';
+function fnn (user) {console.log('${user}来了');}
+export default {
+	ss: ss,
+	fnn: fnn
 }

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>跨域消息传输示例--子页面</title>
+</head>
+<body>
+	<div>我是子页面</div>
+	<script>
+		window.addEventListener('message',function (event) {
+			console.log(event.origin);
+			console.log(event.data);
+			event.source.postMessage('我是从子页面传过来的',event.origin)
+		})
+	</script>
+</body>
+</html>
