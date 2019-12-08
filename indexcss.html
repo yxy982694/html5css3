@@ -114,16 +114,95 @@ div{
 /* div::first-letter{
 	font-size:40px;
 } */
-.bw{
+/* div{
+	margin: 50px 50px 0 50px;
 	width: 300px;
 	border: 1px solid red;
-	/* word-break: break-all; */
-	word-wrap:break-word;
+	pointer-events: none;
+}
+a{
+	pointer-events: none;
+}
+div::after{
+	content: '我是内容';
+	display: block;
+	pointer-events:auto;
+}
+.bw1{
+	margin: initial;
+	width: initial;
+	border: initial;
+} */
+/* .div0{
+	width: 200px;
+	height: 100px;
+	background:url('img/11.png') no-repeat;
+	background-size:100% 100%;
+	margin:20px;
+} */
+/* .div2{ */
+	/* filter: grayscale(0.8);  黑白色，参数可以百分比和小数 */
+	/* filter: sepia(0.8); 棕褐色，参数可以为百分比和小数*/
+	/* filter: saturate(480%); 增加饱和度，小于100%则削弱饱和度 */
+	/* filter:hue-rotate(90deg); 参数为角度，图像颜色沿颜色环（从红到紫）旋转的角度 */
+	/* filter: invert(100%); 100%为将颜色翻转颜色呈现出来，反向处理，百分比为参数 */
+	/* filter:opacity(50%); 透明度，某些浏览器可以实现硬件加速。而opacity属性不具有硬件加速 */
+	/* filter:contrast(200%); 可以为小数或百分比，可以大于100%，对比度 */
+	/* filter: blur(3px); 模糊度，为px单位的整数值 */
+	/* filter:drop-shadow(4px -4px 6px purple);阴影，横向、纵向偏移，模糊半径，颜色 */
+/* } */
+div{
+	--main-color: red;
+	--se-color: yellow;
+	--main-size: 20px; /* 定义方式，必须带--，ie浏览器不支持css变量 */
+	background-color: green;
+}
+@media screen and (min-width: 600px) { /* 可以实现动态改变变量值 */
+	div{
+		--main-size: 30px;
+	}
+}
+.pp{
+	/* 使用方式,当--main-size未定义时，使用默认值10px */
+	font-size: var(--main-size,10px);
+	/* 默认值可以是多个值，用逗号分隔，但是会被结合成一个值 */
+	/* css变量可以跨越Shadow边界 */
+	font-family: var(--de-value,"Roboto","Helvetica");
+	padding: var(--pad,10px 20px 30px); /* 默认值有多个padding用空格隔开 */
+	/* --side: margin-top; */
+	/* var(--side):20px ; var函数不可以用于属性名中，无效 */ 
+	--gap:red;
+	color: var(--main-color);
+	/* margin-top: var(--gap)px; 不可以作为属性值的一部分，要作为全部。无效*/
+	/* margin-top: calc(var(--gap)*1px);  可以这样使用，是有效的*/
 }
 </style>
 </head>
 <body>
-<div class="bw">my nameis your name is lisi mynameiiiiszhangfeimynam</div>
+<div>
+	我是张三
+	<p class="pp">我是李四</p>
+</div>
+<!-- <div class="div0 div1"></div> -->
+<!-- <div class="div0 div2"></div> -->
+<!-- <div class="bw">my nameis your name is lisi mynameiiiiszhangfeimynam</div> -->
+<!-- <a href="http://www.zhaojiao.net/">中国招教网</a> -->
+<!-- <div class="bw1">my nameis your name is lisi mynameiiiiszhangfeimynam</div> -->
+<script>
+	var styles = getComputedStyle(document.documentElement);
+	var value = String(styles.getPropertyValue('--main-color')).trim();
+	console.log(value);
+	// document.documentElement.style.setProperty('--main-color','green');
+	document.documentElement.style.setProperty('--main-color','var(--se-color)');
+	// var bw = document.querySelector('.bw');
+	// bw.onclick = function () {
+		// alert('点击');
+	// }
+	// bw.onmouseover = function () {
+	// 	alert('进入');
+	// }
+</script>
+<!-- <div class="zhang">my nameis your name is lisi mynameiiiiszhangfeimynam</div> -->
 <!-- <div>11</div>
 <p>99</p>
 <p>99</p>
